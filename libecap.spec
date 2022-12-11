@@ -1,6 +1,6 @@
 Name:           libecap
 Version:        1.0.1
-Release:        4
+Release:        5
 Summary:        an loadable eCAP adapter for Squid HTTP-Proxy
 License:        BSD
 URL:            http://www.e-cap.org/
@@ -63,5 +63,8 @@ make check
 %doc README
 
 %changelog
+* Thu Dec 1 2022 zhaozhen <zhaozhen@loongson.cn> - 1.0.1-5
+- Add loongarch64 support
+
 * Wed Aug 28 2019 openEuler Buildteam <buildteam@openeuler.org> - 1.0.1-4
 - Package init

@@ -1,6 +1,6 @@
 Name:           libecap
 Version:        1.0.1
-Release:        5
+Release:        6
 Summary:        an loadable eCAP adapter for Squid HTTP-Proxy
 License:        BSD
 URL:            http://www.e-cap.org/
@@ -8,6 +8,7 @@ Source0:        http://www.e-cap.org/archive/%{name}-%{version}.tar.gz
 
 Source1:        autoconf.h
 BuildRequires:  gcc gcc-c++
+Patch0:         0001-update-config.guess-and-config.sub-file.patch
 
 %description
 eCAP is a software interface that allows a network application,
@@ -27,7 +28,10 @@ BuildArch:	noarch
 Help files for %{name}
 
 %prep
-%autosetup -n %{name}-%{version} -p1
+%setup -q
+%ifarch loongarch64
+%patch0 -p1
+%endif
 
 %build
 %configure
@@ -63,6 +67,10 @@ make check
 %doc README
 
 %changelog
+* Fri Jan 6 2023 doupengda <doupengda@loongson.cn> 1.0.1-6
+- update config.guess and config.sub
+- fix SOURCE1 file autoconf.h '__loongarch64__' to '__loongarch64'
+
 * Fri Jul 30 2021 chenyanpanHW <chenyanpan@huawei.com> - 1.0.1-5
 - DESC: delete -Sgit from %autosetup, and delete BuildRequires git
 

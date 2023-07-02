@@ -1,6 +1,6 @@
 Name:           libecap
 Version:        1.0.1
-Release:        6
+Release:        7
 Summary:        an loadable eCAP adapter for Squid HTTP-Proxy
 License:        BSD
 URL:            http://www.e-cap.org/
@@ -67,6 +67,9 @@ make check
 %doc README
 
 %changelog
+* Mon Jul 03 2023 wangyangdahai <wangyang22@iscas.ac.cn> - 1.0.1-7
+- fix riscv64 arch autoconf.h include path
+
 * Fri Jan 6 2023 doupengda <doupengda@loongson.cn> 1.0.1-6
 - update config.guess and config.sub
 - fix SOURCE1 file autoconf.h '__loongarch64__' to '__loongarch64'

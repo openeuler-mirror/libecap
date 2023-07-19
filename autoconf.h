@@ -46,6 +46,8 @@
 #include "libecap/common/autoconf-aarch64.h"
 #elif defined(__loongarch64)
 #include "libecap/common/autoconf-loongarch64.h"
+#elif defined(__riscv)
+#include "libecap/common/autoconf-riscv64.h"
 #else
 #error "The libecap-devel package is not usable with the architecture."
 #endif
